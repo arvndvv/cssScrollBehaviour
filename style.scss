@@ -1,0 +1,93 @@
+/*
+
+Main features
+**************
+parent element (container)=>
+*******************
+scroll-behaviour:smooth;
+scroll-snap-type:y mandatory;
+*************
+child element(which scrolls)=>
+*************
+scroll-snap-align:center;
+
+*/
+
+$dark:#333;
+$bg1:#febcdd;
+$bg2:#bcfe66;
+$bg3:#aa66fe;
+$bg4:#abcdef;
+$navbg:#ee7788;
+$navlight:#ffbbbb;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    .container {
+        width: 100vw;
+        height: 100vh;
+        color: $dark;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+    }
+    .section {
+        display: grid;
+        place-items: center;
+        justify-items: center;
+        width: 100vw;
+        scroll-snap-align: center;
+        height: 100vh;
+        padding: 25%;
+    }
+    .sec1 {
+        background: $bg1;
+    }
+    .sec2 {
+        background: $bg2;
+    }
+    .sec3 {
+        background: $bg3;
+    }
+    .sec4 {
+        background: $bg4;
+    }
+    .nav {
+        background: $navbg;
+        position: fixed;
+        width: 100%;
+    }
+    .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    .nav ul li {
+        padding: 20px;
+        position: relative;
+    }
+    .nav ul a {
+        text-decoration: none;
+        color: $navlight;
+        font-size: 1.2em;
+        font-weight: 600;
+        transition: 300ms;
+    }
+    .nav ul a:hover {
+        color: lighten($color: $navlight, $amount: 5%);
+    }
+}
